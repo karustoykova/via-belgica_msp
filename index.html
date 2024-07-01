@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Via Belgica</title>
+    <meta name="description" content="Description of the page here">
+    <meta name="keywords" content="Via Belgica, Belgica, Roman Road">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.scss">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- header -->
+     <header>
+        <a href="index.html">
+            <img src="/photos/rwrwrwrw-02.png" alt="Site icon" class="icon">
+        </a>        <!-- navigation bar -->
+        <div class="navbar">
+            <a href="index.html" id="about">About</a>
+            <a href="what-to-see.html" id="what-to-see">What to See</a>
+            <a href="research.html" id="our-reseach">Our Research</a>
+        </div>
+    </header>
+
+
+    <!-- image carousel-->
+    <div id="image-carousel" class="carousel">
+        <img src="/photos/testimg.jpg" alt="photo description" class="active">
+        <img src="/photos/testimg2.JPG" alt="photo description">
+        <img src="/photos/placeholder.png" alt="photo description">
+        <div class="carousel-control">
+            <button id="prev">
+                <img src="/icons/icons8-chevron-left-50.png" alt="left arrow">
+            </button>
+            <button id="next">
+                <img src="/icons/icons8-chevron-right-50.png" alt="right arrow">
+            </button>
+        </div>
+    </div>
+
+    <h2>Via Belgica</h2>
+    <p>The "Via Belgica" project delves into tracing the ancient Roman route known as the "Belgian Way," connecting Roman Cologne (Colonia Claudia Ara Agrippinensis) to Boulogne-sur-Mer (Gesoriacum) on the French coast. Passing through Roman Maastricht (Traiectum ad Mosam), nestled between Atuatuca Tungrorum (Tongeren) and Coriovallum (Heerlen), this road exemplifies Roman engineering, considering natural features such as rivers and hills, alongside strategic settlements and monuments.</p>
+    <p>Our project built upon earlier mappings from Braives to Tongeren, Tongeren to Maastricht, and Maastricht to Heerlen. We focused on mapping the stretch from Heerlen to Jülich in Germany, utilizing archaeological findings from Heerlen, Cologne, and the surrounding regions.</p>
+        
+
+    <!-- footer with contact form -->
+     <div class="footer">
+        <div class="footer-content contact-info">
+            <h2>About the Project</h2>
+            <p>&copy; 2024 Via Belgica. Created by UM students.</p>
+        </div>
+        <div class="footer-content contact-form">
+            <h2 class="contact-us">Get in Touch</h2>
+            <form name="contact" method="post" netlify>
+                <input type="hidden" name="form-name" value="contact">
+
+                <div class="form-row">
+                    <input type="text" name="fname" id="fname" placeholder="First Name" required>
+                    <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" name="phone" id="phone" placeholder="Phone">
+                </div>
+                <div class="form-row">
+                    <textarea name="message" id="message" placeholder="Type your message here..." required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+     </div>
+</body>
+</html>

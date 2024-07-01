@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Via Belgica</title>
+        <meta name="description" content="Description of the page here">
+        <meta name="keywords" content="Via Belgica, Belgica, Roman Road">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="styles.scss">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <!-- header -->
+    <header>
+        <a href="index.html">
+            <img src="/photos/rwrwrwrw-02.png" alt="Site icon" class="icon">
+        </a>        
+        <!-- navigation bar -->
+        <div class="navbar">
+            <a href="index.html" id="about">About</a>
+            <a href="what-to-see.html" id="what-to-see">What to See</a>
+            <a href="research.html" id="our-reseach">Our Research</a>
+        </div>
+    </header>
+
+<!-- PDFs with previous research -->
+    <div class="pdf-viewer-container">
+        <h2>Mapping the Via Belgica</h2>
+        <p>All previous research papers, including ours, are available for reading. These papers span the mapping efforts from Braives to Tongeren, Tongeren to Maastricht, and Maastricht to Heerlen, culminating in our focused exploration from Heerlen to Jülich in Germany.</p>
+        <div class="pdf-buttons">
+            <button onclick="openPDF('pdf1')">Mapping the Via Belgica I</button>
+            <button onclick="openPDF('pdf2')">Mapping the Via Belgica II</button>
+            <button onclick="openPDF('pdf3')">Mapping the Via Belgica III</button>
+            <button onclick="openPDF('pdf4')">Mapping the Via Belgica IV</button>
+        </div>
+        <div class="pdf-container" id="pdfContainer"></div>
+    </div>
+
+    <!-- The PDFs are hidden initially -->
+     <div class="pdf-page" id="pdf1">
+        <object data="pdfs/Via_Belgica-1.pdf" type="application/pdf" width="100%" height="100%"></object>
+     </div>
+     <div class="pdf-page" id="pdf2">
+        <object data="pdfs/Via_Belgica-1.pdf" type="application/pdf" width="100%" height="100%"></object>
+     </div>
+     <div class="pdf-page" id="pdf3">
+        <object data="pdfs/Via_Belgica-1.pdf" type="application/pdf" width="100%" height="100%"></object>
+     </div>
+     <div class="pdf-page" id="pdf4">
+        <object data="pdfs/Via_Belgica-1.pdf" type="application/pdf" width="100%" height="100%"></object>
+     </div>
+
+         <!-- footer with contact form -->
+    <div class="footer">
+        <div class="footer-content contact-form">
+            <h2>Get in Touch!</h2>
+            <form action="#" method="post"></form>
+                <div class="form-row">
+                    <label for="fname"></label>
+                    <input type="text" name="fname" id="fname" placeholder="First Name" required>
+
+                    <label for="lname"></label>
+                    <input type="tel" name="lname" id="lname" placeholder="Last Name" required>
+                </div>
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+
+                <label for="phone"></label>
+                <input type="tel" name="phone" id="phone" placeholder="Phone">
+
+                <label for="message"></label>
+                <textarea name="message" id="message" placeholder="Type your message here..." required></textarea>
+
+                <button type="submit">Submit</button>
+        </div>
+        <div class="footer-content contact-info">
+            <h2>Contact Information</h2>
+            <p>Bla bla UM address here or idk</p>
+            <p>Email: idk someones email here lol</p>
+        </div>
+    </div>
+</body>
+</html>

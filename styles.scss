@@ -1,0 +1,226 @@
+// Variables and mixins
+// Colors
+$terra-cotta: #e2725b;
+$slate-gray: #708090;
+$olive-green: #78866B;
+$marble-white: #E5E4E2;
+
+// Fonts
+@mixin header-font {
+    font-family: 'Playfair Display', serif;
+    font-size: 16pt;
+    font-weight: 700;
+}
+
+@mixin body-font {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12pt;
+}
+
+@mixin button-main {
+    background-color: #e2725b;
+    border: none;
+    border-radius: 3px;
+    color: #E5E4E2;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3 ease, opacity 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+body {
+    background-color: #E5E4E2;
+    margin: 0 200px;
+    @include body-font;
+}
+
+// Header & icon style
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    background-color: #E5E4E2;
+
+    .icon {
+        width: auto;
+        height: 70px;
+    }
+}
+
+// Navigation bar style
+.navbar {
+    display: flex;
+    gap: 20px;
+
+    a {
+        position: relative;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px; // Adjust as needed
+        color: #78866B; // Adjust the color as needed
+        padding: 10px; // Optional: Add padding for better click area
+        transition: color 0.3s ease; // Smooth color transition
+  
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: #78866B; // Adjust the color as needed
+          transform-origin: bottom right;
+          transition: transform 0.4s ease;
+        }
+  
+        &:hover {
+          color: #78866B; // Optional: Change text color on hover
+  
+          &::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+      
+    }
+}
+
+// Image carousel style
+#image-carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+
+    img {
+        display: none;
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+
+        &.active {
+            opacity: 1;
+            display: block;
+        }
+    }
+
+    .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            padding: 10px;
+            width: 30px; // Adjust width and height as needed
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            img {
+                width: 100%; // Ensure the image fits the button
+                height: auto;
+            }
+        }
+    }
+}
+
+
+// General style for the footer section
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px;
+
+    h2 {
+        @include header-font;
+    }
+
+    // Contact form styling
+    .contact-form {
+        flex: 1;
+        max-width: 40%;
+        display: flex;
+        flex-direction: column;
+
+        input, textarea {
+            padding: 5px;
+            @include body-font;
+            font-size: 10pt;
+            margin: 3px 0;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 3px;
+
+            input[type="text"] {
+                flex: 1;
+                margin-right: 5px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            input[type="email"],
+            input[type="tel"],
+            textarea {
+                flex: 1;
+            }
+        }
+    }
+
+    button {
+        @include button-main;
+    }
+}
+    
+// PDF container style
+.pdf-viewer-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+
+    .pdf-container {
+        overflow-y: auto;
+        margin: 10px 20px;
+        // height: 700px;
+    }
+
+    button {
+        @include button-main;
+    }
+}
+
+.pdf-page {
+    display: none;
+    height: 800px;
+    margin-bottom: 50px;
+}
+
+// Map styling
+#map {
+    height: 400px;
+    width: auto;
+    background-color: #708090;
+}

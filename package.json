@@ -1,0 +1,27 @@
+{
+  "name": "via_belgica",
+  "version": "1.0.0",
+  "description": "University project - Via Belgica",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "project",
+    "roman",
+    "road",
+    "via",
+    "belgica"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.6",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "maplibre-gl": "^4.4.1"
+  }
+}
