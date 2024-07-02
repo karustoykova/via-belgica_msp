@@ -37,6 +37,10 @@ body {
     @include body-font;
 }
 
+h2 {
+    @include header-font;
+}
+
 // Header & icon style
 header {
     display: flex;
@@ -44,6 +48,7 @@ header {
     justify-content: space-between;
     padding: 0 100px;
     background-color: #E5E4E2;
+    margin-top: 20px;
 
     .icon {
         width: auto;

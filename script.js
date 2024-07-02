@@ -90,26 +90,37 @@ document.addEventListener('DOMContentLoaded', function () {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-  // Define custom icon
+  // Define custom icon for general locations
   var customIcon = L.icon({
-      iconUrl: '/icons/icons8-map-pin-48.png',
+      iconUrl: '/via-belgica_msp/icons/icons8-map-pin-48.png', // Ensure this path is correct
       iconSize: [30, 30], // Size of the icon
-      iconAnchor: [24, 48], // Point of the icon which corresponds to marker's location
-      popupAnchor: [0, -48] // Point from which the popup should open relative to the iconAnchor
+      iconAnchor: [15, 30], // Adjusted to [15, 30] for better positioning
+      popupAnchor: [0, -30] // Adjusted to [0, -30] for better popup positioning
+  });
+
+  // Define custom icon for reviews
+  var reviewIcon = L.icon({
+      iconUrl: '/via-belgica_msp/icons/icons8-review-40.png', // Ensure this path is correct
+      iconSize: [25, 25], // Size of the icon
+      iconAnchor: [15, 30], // Adjusted to [15, 30] for better positioning
+      popupAnchor: [0, -30] // Adjusted to [0, -30] for better popup positioning
   });
 
   // Marker locations and titles
   var markers = [
-      { location: [50.7804, 5.4646], title: 'Tongeren' },
-      { location: [50.8514, 5.6909], title: 'Maastricht' },
-      { location: [50.8878, 5.9795], title: 'Heerlen' },
-      { location: [50.932, 6.3595], title: 'Jülich' }
+      { location: [50.7804, 5.4646], title: 'Tongeren', icon: customIcon },
+      { location: [50.8514, 5.6909], title: 'Maastricht', icon: customIcon },
+      { location: [50.8878, 5.9795], title: 'Heerlen', icon: customIcon },
+      { location: [50.932, 6.3595], title: 'Jülich', icon: customIcon },
+      { location: [50.6938, 5.2545], title: 'Waremme', icon: customIcon },
+      { location: [50.897038, 6.280420], title: '<b>Linn</b>: ⭐⭐⭐⭐ Me and my group went on this walk on a beautiful sunny day in June, and it was lovely. We started early in Heerlen and got ready to enjoy the beautiful day. The first part of the walk was through the city, but as soon as we got out of it, the scenery gave way to large fields, occasionally passing through cute little towns. The weather was beautiful and allowed us to catch a tan while also enjoying a brisk walk, though it is important to bring lots of water and sun cream! After about 6 hours of walking, we reached the city of Aldenhoven, where the walk had to come to an end for us.', icon: reviewIcon },
+      { location: [50.9093, 6.1883], title: '<b>Ethan:</b> ⭐⭐⭐ It was a pleasant walk accessible for people of all ages with its minimal incline. You can also stop to rest along charming small cities on the way. This was a lovely walk to do in summer when the flowers and gardens are all in bloom. I would recommend choosing a day that is not too warm.', icon: reviewIcon } // Baesweiler with review
   ];
 
   // Add markers to the map
   markers.forEach(function (marker) {
-      L.marker(marker.location, { icon: customIcon }).addTo(map)
-          .bindPopup(marker.title); // Add a popup with the location title
+      L.marker(marker.location, { icon: marker.icon }).addTo(map)
+          .bindPopup(marker.title); // Add a popup with the location title or review
   });
 
   // Check console for errors

@@ -5,12 +5,19 @@ body {
   font-size: 12pt;
 }
 
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 16pt;
+  font-weight: 700;
+}
+
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 100px;
   background-color: #E5E4E2;
+  margin-top: 20px;
 }
 header .icon {
   width: auto;
